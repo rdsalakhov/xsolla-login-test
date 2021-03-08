@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Widget page</title>
+        <script src="https://login-sdk.xsolla.com/latest/"></script>
+    </head>
+    <body>
+        <h1>xsolla-login-widget</h1>
+        <div id="xl_auth" style="height: 700px"></div>
+        <script>
+            const xl = new XsollaLogin.Widget({
+                projectId: '6d75b4d2-7c20-11eb-bc85-42010aa80004',
+                preferredLocale: 'ru_RU',
+                clientId: '310',
+                responseType: 'code',
+                state: 'myrandom',
+                redirectUri: 'http://localhost:5000/callback',
+                scope: 'offline'
+            });
+            xl.mount('xl_auth');
+        </script>
+    </body>
+</html>
